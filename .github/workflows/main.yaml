@@ -44,4 +44,4 @@ jobs:
         run: |
           git add .
           git commit -m "API from OpenAPI Design"
-          git push origin master
+          git push
