@@ -35,3 +35,13 @@ jobs:
         run: npm install -g openapi2apigee
       - name: Generate Apigee API proxy 
         run: openapi2apigee generateApi petStore -s ./openapi/petStore-openapi.yaml -d .
+      - name: setup git config
+        run: |
+          git config user.name "IKEA Apigee Team "
+          git config user.email "rangan.lyengar@inter.ikea.com"
+
+      - name: commit
+        run: |
+          git add .
+          git commit -m "API from OpenAPI Design"
+          git push origin master
