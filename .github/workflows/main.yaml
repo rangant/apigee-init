@@ -22,7 +22,7 @@ on:
       - "main"
 jobs:
   createAPISkeleton:
-    name: "Create Apigee API proxy skeleton "
+    name: "Create Apigee API proxy skeleton"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
