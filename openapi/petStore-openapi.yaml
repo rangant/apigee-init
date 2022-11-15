@@ -120,7 +120,7 @@ paths:
       operationId: findPetsByStatus
       parameters:
         - name: status
-          in: query
+          in: body
           description: Status values that need to be considered for filter
           required: false
           explode: true
