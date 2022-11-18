@@ -17,10 +17,15 @@
 name: apigee-deployment
 
 on:
-  workflow_call:
   push:
     branches:
       - "main"
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: string
+        default: DEV
+        required: true   
 jobs:
   createAPISkeleton:
     name: "Create Apigee API proxy skeleton"
