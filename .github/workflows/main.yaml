@@ -49,7 +49,8 @@ jobs:
         run: openapi2apigee generateApi petStore -s ./openapi/petStore-openapi.yaml -d .
       - name: Install openapi2postman  
         run: npm -g install openapi-to-postmanv2 
-      - name: Generate Postman ACollection 
+      - name: Generate Postman Collection 
+        run: mkdir test
         run: openapi2postmanv2 -s openapi\petStore-openapi.yaml -o test\test.json
       - name: setup git config
         run: |
