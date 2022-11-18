@@ -55,7 +55,7 @@ jobs:
           mkdir test
       - name: Generate Postman Collection 
         if: steps.folderCreate.outcome == 'success'
-        run: openapi2postmanv2 -s openapi/petStore-openapi.yaml -o test\test.json
+        run: openapi2postmanv2 -s openapi/petStore-openapi.yaml -o test/test.json
       - name: setup git config
         run: |
           git config user.name "IKEA Apigee Team "
