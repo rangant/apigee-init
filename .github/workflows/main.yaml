@@ -22,9 +22,9 @@ on:
       - "main"
   workflow_dispatch:
     inputs:
-      environment:
+      manualTrigger:
         type: string
-        default: DEV
+        default: Yes
         required: true   
 jobs:
   createAPISkeleton:
