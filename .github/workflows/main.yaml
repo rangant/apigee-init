@@ -17,6 +17,7 @@
 name: apigee-deployment
 
 on:
+  workflow_call:
   push:
     branches:
       - "main"
