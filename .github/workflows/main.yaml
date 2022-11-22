@@ -54,8 +54,14 @@ jobs:
         run: openapi2apigee generateApi petStore -s ./openapi/petStore-openapi.yaml -d .
       - name: Install openapi2postman  
         run: npm -g install openapi-to-postmanv2 
+      - name: "Check file existence"
+        id: folderExists
+        uses: andstor/file-existence-action@v2
+        with:
+          files: "test"
       - name: Create folder 
         id: folderCreate
+        if: steps.folderExists.outputs.files_exists == 'false'
         run: | 
           mkdir test
       - name: Generate Postman Collection 
