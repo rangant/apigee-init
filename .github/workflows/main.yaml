@@ -65,7 +65,7 @@ jobs:
         run: | 
           mkdir test
       - name: Generate Postman Collection 
-        if: steps.folderCreate.outcome == 'success'
+        if: steps.folderCreate.outcome == 'success' || steps.folderExists.outputs.files_exists == 'true'
         run: openapi2postmanv2 -s openapi/petStore-openapi.yaml -o test/test.json
       - name: setup git config
         run: |
